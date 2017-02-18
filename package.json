@@ -11,13 +11,13 @@
     "url": "git+https://github.com/lars-wobus/type-based-execution.git"
   },
   "keywords": [
-    "dynamic",
-	"datatype",
-    "type",
-	"chain-of-responsibility",
-	"visitor",
+    "dispatch",
 	"double-dispatch",
-	"dispatch"
+	"type",
+	"datatype",
+	"visitor",
+	"chain-of-responsibility",
+    "dynamic"
   ],
   "author": "Lars Wobus",
   "license": "MIT",

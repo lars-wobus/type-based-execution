@@ -1,0 +1,28 @@
+{
+  "name": "type-based-execution",
+  "version": "1.0.0",
+  "description": "Executes function on specific data type",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lars-wobus/type-based-execution.git"
+  },
+  "keywords": [
+    "dynamic",
+	"datatype",
+    "type",
+	"chain-of-responsibility",
+	"visitor",
+	"double-dispatch",
+	"dispatch"
+  ],
+  "author": "Lars Wobus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lars-wobus/type-based-execution/issues"
+  },
+  "homepage": "https://github.com/lars-wobus/type-based-execution#readme"
+}

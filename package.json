@@ -12,11 +12,11 @@
   },
   "keywords": [
     "dispatch",
-	"double-dispatch",
-	"type",
-	"datatype",
-	"visitor",
-	"chain-of-responsibility",
+    "double-dispatch",
+    "type",
+    "datatype",
+    "visitor",
+    "chain-of-responsibility",
     "dynamic"
   ],
   "author": "Lars Wobus",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/lars-wobus/type-based-execution/issues"
   },
-  "homepage": "https://github.com/lars-wobus/type-based-execution#readme"
+  "homepage": "https://github.com/lars-wobus/type-based-execution#readme",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
 }

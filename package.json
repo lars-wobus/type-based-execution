@@ -1,6 +1,6 @@
 {
   "name": "type-based-execution",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Executes function on specific data type",
   "main": "index.js",
   "scripts": {

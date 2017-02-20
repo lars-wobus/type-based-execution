@@ -68,6 +68,7 @@ Additionally one can define own subclasses of 'BaseProcessor' to extend process 
 ```javascript
 "use strict";
 
+var _ = require('underscore');
 var tbe = require('type-based-execution');
 
 ...
@@ -76,16 +77,12 @@ class IpProcessor extends tbe.BaseProcessor
 {   
     constructor(forwardOnSuccess) {
         super(forwardOnSuccess);
+        this.Callback = function(err, res){console.log("Input string matches IP address pattern");};
     }
     
     isTypeOf(value)
     {
         return (_.isString(value) && value.match(/^(?!0)(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/));
-    }
-    
-    Callback(err, res)
-    {
-        console.log("Input string matches IP address pattern");
     }
 }
 

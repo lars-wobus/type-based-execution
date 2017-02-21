@@ -1,6 +1,10 @@
 # type-based-execution
-## Summary
-Can be used to handle specific datatypes in different ways, for instance reject everything except for strings.
+
+```
+npm install type-based-execution --save
+```
+
+The module can be used to force your application to handle specific datatypes in different ways, for instance reject everything except for strings.
 
 ```javascript
 var tbe = require('type-based-execution');
@@ -26,15 +30,7 @@ hello world
 
 The module already comes with a simple process chain. If one of these checks shown below is successful the corresponding callback function is being called.
 
-1. Check if parameter is undefined
-2. Check if parameter is null
-3. Check if parameter is boolean
-4. Check if parameter is number
-5. Check if parameter is string
-6. Check if parameter is array
-7. Check if parameter is object
-
-The only thing left to do is to define some callback functions using 'setCallback' as shown above.
+![example_process_chain](https://cloud.githubusercontent.com/assets/25703985/23181255/93798bd0-f874-11e6-89f9-00e1e6c0e931.png)
 
 ## Create your own process chain
 One can easily create own process chains, for instance only allow arrays and objects.
@@ -62,9 +58,11 @@ next.Callback = function(err, res){
     console.log("Parameter was an object: " + res);
 };
 ```
-Please note that, if 'forwardOnSuccess' is defined multiple processors might call their callback function. For instance, arrays are also treated as objects. At the moment the module does not use promisses which means that one cannot say which callback function finishes first.
+Please note that, if 'forwardOnSuccess' is defined multiple processors might call their callback function. For instance, arrays are also treated as objects. At the moment the module does not use promisses which means that no one can say which callback function finishes first.
 
-Additionally one can define own subclasses of 'BaseProcessor' to extend process chains, e.g.:
+![user_defined_process_chain](https://cloud.githubusercontent.com/assets/25703985/23181303/c7333778-f874-11e6-8372-ce9c907b7166.png)
+
+Additionally one can define subclasses of 'BaseProcessor' to create further process chains, e.g.:
 ```javascript
 "use strict";
 
@@ -90,15 +88,14 @@ class IpProcessor extends tbe.BaseProcessor
 
 root.add(new IpProcessor());
 ```
-Do not forget to add "use strict"; on top of your javascript files when defining own classes!
+Do not forget to add `"use strict";` on top of your javascript files when defining own classes!
 
-Classes which were already defined:
+## Summary
 
-+ ArrayProcessor
-+ BaseProcessor
-+ BooleanProcessor
-+ NullProcessor
-+ NumberProcessor
-+ ObjectProcessor
-+ StringProcessor
-+ UndefinedProcessor
+The activity diagram below describes the process chain.
+
+![activity_diagram](https://cloud.githubusercontent.com/assets/25703985/23181294/bfb703bc-f874-11e6-9391-82fca6cab98d.png)
+
+## Future release plan
+
++ 'isTypeOf' will be renamed into 'accept' (next major release)
